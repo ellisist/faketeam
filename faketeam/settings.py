@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# changed to work with axios
+CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 
 # Application definition
 

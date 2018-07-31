@@ -7,7 +7,6 @@ from django.views.generic import TemplateView
 # Additionally, we include login URLs for the browsable API
 urlpatterns = [
     url(r'^api/', include('api.urls')),
-    url(r'^users/', include('userpage.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^', TemplateView.as_view(template_name="index.html")),
 ]

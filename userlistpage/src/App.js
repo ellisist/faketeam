@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import { login } from './util/Auth';
 import './App.css';
+import { USERNAME, PASSWORD } from './secret.js'  // secret.js not included in git
+
+login(USERNAME, PASSWORD)
 
 class App extends Component {
   render() {

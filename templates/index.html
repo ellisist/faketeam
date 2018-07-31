@@ -7,6 +7,7 @@
     <title>FakeTeam</title>
   </head>
   <body>
+    {% csrf_token %}
     <div id="root">
     </div>
     {% render_bundle 'main' %}
