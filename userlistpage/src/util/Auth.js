@@ -4,7 +4,6 @@ import store from '../store';
 import { setToken } from '../actions';
 import { URL, LOGIN } from '../config/Api.js';
 
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 export function InvalidCredentialsException(message) {
   this.message = message;
@@ -12,7 +11,6 @@ export function InvalidCredentialsException(message) {
 }
 
 export function login(username, password, ) {
-  console.log("Trying to log in to " + URL + LOGIN);
   return axios
     .post(URL + LOGIN, {
       username,
