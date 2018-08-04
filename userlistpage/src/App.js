@@ -8,26 +8,21 @@ import { apiClient } from './util/ApiClient.js'
 
 function TeamMember(props) {
   return (
-    <div>
-      { props.data.name_first + " " + props.data.name_last}
+    <div style={{"display": "flex", "justifyContent": "space-around", "margin": "2rem"}}>
+      <p>{props.data.name_first + " " + props.data.name_last}</p>
+      <p>{props.data.email}</p>
+      <img src={props.data.picture_large} alt={"User image for " + props.data.name_first + " " + props.data.name_last} style={{"order": "-1"}}/>
     </div>
 )
 }
 
-function TeamList(arr) {
-  let team = []
-  for(let member of arr){
-    team.push(
-      <li key={member.email}>
-        <TeamMember data={member} />
-      </li>
+function Team(props) {
+  let teamlist = []
+  for (let member of props.data){
+    teamlist.push(
+      <TeamMember data={member} key={member.email} />
     )
   }
-  return team;
-}
-
-function Team(props) {
-  let teamlist = TeamList(props.data)
   return (
     <ul>
       {teamlist}
